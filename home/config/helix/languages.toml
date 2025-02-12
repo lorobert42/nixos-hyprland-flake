@@ -1,0 +1,5 @@
+[[language]]
+name = "nix"
+
+[language.formatter]
+command = "nixpkgs-fmt"
