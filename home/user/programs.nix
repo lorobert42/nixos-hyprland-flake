@@ -44,40 +44,6 @@
     extraPackages = [
       pkgs.nil
     ];
-    languages = {
-      language = [{
-        name = "nix";
-        formatter = { command = "nixpkgs-fmt"; };
-      }];
-    };
-    settings = {
-      editor = {
-        line-number = "relative";
-        true-color = true;
-        bufferline = "multiple";
-        default-line-ending = "lf";
-        popup-border = "all";
-        cursor-shape = {
-          normal = "bar";
-          insert = "bar";
-        };
-        indent-guides = {
-          render = true;
-          character = "┆";
-          skip-levels = 1;
-        };
-        soft-wrap.enable = true;
-      };
-      keys = {
-        normal = {
-          C-s = ":w";
-          C-r = ":reload";
-        };
-        insert = {
-          C-s = ["normal_mode" ":w"];
-        };
-      };
-    };
   };
 
   programs.oh-my-posh = {
@@ -92,22 +58,22 @@
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
-    settings = {
-      default_shell = "fish";
-      default_layout = "compact";
-      default_mode = "locked";
-      keybinds = {
-        locked = {
-          "bind \"Alt f\"" = { ToggleFloatingPanes = []; };
-          "bind \"Alt n\"" = { NewTab = []; };
-          "bind \"Alt x\"" = { CloseTab = []; };
-          "bind \"Alt l\"" = { GoToNextTab = []; };
-          "bind \"Alt h\"" = { GoToPreviousTab = []; };
-          "bind \"Alt +\"" = { Resize = "Increase"; };
-          "bind \"Alt -\"" = { Resize = "Decrease"; };
-        };
-      };
-    };
+    # settings = {
+    #   default_shell = "fish";
+    #   default_layout = "compact";
+    #   default_mode = "locked";
+    #   keybinds = {
+    #     locked = {
+    #       "bind \"Alt f\"" = { ToggleFloatingPanes = []; };
+    #       "bind \"Alt n\"" = { NewTab = []; };
+    #       "bind \"Alt x\"" = { CloseTab = []; };
+    #       "bind \"Alt l\"" = { GoToNextTab = []; };
+    #       "bind \"Alt h\"" = { GoToPreviousTab = []; };
+    #       "bind \"Alt +\"" = { Resize = "Increase"; };
+    #       "bind \"Alt -\"" = { Resize = "Decrease"; };
+    #     };
+    #   };
+    # };
   };
 
   programs.home-manager.enable = true;

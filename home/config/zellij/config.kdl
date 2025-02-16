@@ -1,0 +1,28 @@
+default_layout "compact"
+default_mode "locked"
+default_shell "fish"
+keybinds {
+	locked {
+		bind "Alt +" {
+			Resize "Increase"
+		}
+		bind "Alt -" {
+			Resize "Decrease"
+		}
+		bind "Alt f" {
+			ToggleFloatingPanes 
+		}
+		bind "Alt h" {
+			GoToPreviousTab 
+		}
+		bind "Alt l" {
+			GoToNextTab 
+		}
+		bind "Alt n" {
+			NewTab 
+		}
+		bind "Alt x" {
+			CloseTab 
+		}
+	}
+}
