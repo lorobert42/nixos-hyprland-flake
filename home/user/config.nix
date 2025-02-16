@@ -11,6 +11,7 @@ in
     picom.source = "${dotfiles}/picom";
     polybar.source = "${dotfiles}/polybar";
     "rainbow.png".source = "${dotfiles}/rainbow.png";
+    rofi.source = "${dotfiles}/rofi";
     zellij.source = "${dotfiles}/zellij";
   };
 }

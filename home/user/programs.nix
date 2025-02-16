@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.bat.enable = true;
   programs.bottom.enable = true;
@@ -51,29 +51,13 @@
     settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ../config/oh-my-posh/config.json));
   };
 
-  programs.rofi = {
-    enable = true;
-  };
+  # programs.rofi = {
+  #   enable = true;
+  # };
 
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
-    # settings = {
-    #   default_shell = "fish";
-    #   default_layout = "compact";
-    #   default_mode = "locked";
-    #   keybinds = {
-    #     locked = {
-    #       "bind \"Alt f\"" = { ToggleFloatingPanes = []; };
-    #       "bind \"Alt n\"" = { NewTab = []; };
-    #       "bind \"Alt x\"" = { CloseTab = []; };
-    #       "bind \"Alt l\"" = { GoToNextTab = []; };
-    #       "bind \"Alt h\"" = { GoToPreviousTab = []; };
-    #       "bind \"Alt +\"" = { Resize = "Increase"; };
-    #       "bind \"Alt -\"" = { Resize = "Decrease"; };
-    #     };
-    #   };
-    # };
   };
 
   programs.home-manager.enable = true;

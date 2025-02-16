@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services = {
     dbus.enable = true;
-    # picom.enable = true;
     openssh.enable = true;
     spice-vdagentd.enable = true;
 
@@ -27,6 +26,7 @@
         extraPackages = with pkgs; [
           i3lock #default i3 screen locker
           polybarFull
+          rofi
           xborders
         ];
       };
