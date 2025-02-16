@@ -1,3 +1,4 @@
+theme "catppuccin-mocha"
 default_layout "compact"
 default_mode "locked"
 default_shell "fish"

@@ -10,5 +10,7 @@ in
     i3.source = "${dotfiles}/i3";
     picom.source = "${dotfiles}/picom";
     polybar.source = "${dotfiles}/polybar";
+    "rainbow.png".source = "${dotfiles}/rainbow.png";
+    zellij.source = "${dotfiles}/zellij";
   };
 }
