@@ -2,20 +2,34 @@
 
 {
   services = {
-  	dbus.enable = true;
-	picom.enable = true;
-	openssh.enable = true;
+    dbus.enable = true;
+    # picom.enable = true;
+    openssh.enable = true;
     spice-vdagentd.enable = true;
 
-	xserver = {
-		enable = true;
-		layout = "us, ru, ge";
-        xkbOptions = "grp:alt_shift_toggle, caps:swapescape";
+    displayManager = {
+      sddm.enable = true;
+      sddm.package = pkgs.kdePackages.sddm;
+      sddm.theme = "catppuccin-mocha";
+    };
 
-		displayManager = {
-			sddm.enable = true;
-            sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
-		};
-	};
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "ch";
+        variant = "fr";
+      };
+
+      videoDrivers = ["nvidia"];
+
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          i3lock #default i3 screen locker
+          polybarFull
+          xborders
+        ];
+      };
+    };
   };
 }

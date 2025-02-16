@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./disks.nix
     ./modules 
   ];
 
 
-  system.stateVersion = "23.11"; 
+  system.stateVersion = "24.05";
 }
 

@@ -1,5 +1,15 @@
+general.import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+TERM = "xterm-256color"
+
 [font]
-normal = {
-  family = "JetBrainsMono Nerd Font",
-  style = "regular"
-}
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+
+[window]
+opacity = 0.9
+padding = { x = 4, y = 4 }
+decorations = "None"

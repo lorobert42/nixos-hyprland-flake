@@ -1,6 +1,6 @@
 let
-  userName = "gpskwlkr";
-  email = "giorgi.anakidze@outlook.com";
+  userName = "lorobert";
+  email = "lorobert@student.42lausanne.ch";
 in
 {
     programs.git = {

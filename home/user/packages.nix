@@ -1,64 +1,47 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
-  
-
   home.packages = [
-
     # Dev stuff
-    pkgs.jetbrains.rider
-    pkgs.dotnet-sdk_8
-    pkgs.dotnetPackages.Nuget
     pkgs.gcc
-    pkgs.go
     pkgs.lua
-    pkgs.nodejs_21
+    pkgs.nodejs_22
     pkgs.nodePackages.pnpm
     (pkgs.python3.withPackages (python-pkgs: [
         python-pkgs.pip
         python-pkgs.requests
     ]))
     pkgs.rustup
-    pkgs.pkgsCross.mingwW64.stdenv.cc 
-    pkgs.pkgsCross.mingwW64.windows.pthreads
-    pkgs.zig
     
     # Work stuff
-    pkgs.obsidian
-    pkgs.teams-for-linux
-    pkgs.thunderbird
-    pkgs.zoom-us
     pkgs.libreoffice-qt
     pkgs.hunspell
  
     # Bluetooth
     pkgs.blueberry
 
-    
-
-    # Social
-    pkgs.telegram-desktop
-    pkgs-unstable.vesktop
-
     # Gaming
     pkgs.steam
     pkgs.steam-run
-    pkgs.yuzu-mainline
     (pkgs.lutris.override {
       extraPkgs = pkgs: [
         pkgs.wineWowPackages.stable
         pkgs.winetricks
       ];
     })
+    pkgs.bottles
 
     # Downloads
-    pkgs.qbittorrent
+    pkgs.transmission_4-qt
 
     # Utils
+    pkgs.feh
     pkgs.viewnior
-    pkgs-unstable.hyprshot
-    pkgs.catppuccin-cursors.macchiatoBlue
-    pkgs.catppuccin-gtk
+    # pkgs.catppuccin-cursors.macchiatoBlue
+    # pkgs.catppuccin-gtk
+    pkgs.picom
     pkgs.papirus-folders
+    pkgs.networkmanagerapplet
+    pkgs.brightnessctl
   ];
 }
