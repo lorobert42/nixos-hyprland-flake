@@ -22,6 +22,7 @@
     wget
     xfce.thunar
     xdg-desktop-portal-gtk
+    xorg.libXmu
     zip
     zoxide
   ];

@@ -12,6 +12,10 @@
         python-pkgs.requests
     ]))
     pkgs.rustup
+    pkgs.typescript-language-server
+    pkgs.vscode-langservers-extracted
+    pkgs.emmet-ls
+    pkgs.dprint
     
     # Work stuff
     pkgs.libreoffice-qt

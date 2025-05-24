@@ -7,7 +7,7 @@
     ./gaming.nix
     ./hardware.nix
     # ./hyprland.nix
-    # ./plasma.nix
+    ./plasma.nix
     ./internationalisation.nix
     ./misc.nix
     ./networking.nix

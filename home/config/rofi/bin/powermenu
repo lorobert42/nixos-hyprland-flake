@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 rofi_command="rofi -theme $HOME/.config/rofi/config/powermenu.rasi"
 
-uptime=$(uptime -p | sed -e 's/up //g')
+uptime=$(uptime | cut -d' ' -f7 | cut -d',' -f1)
 
 # Options
 if [[ "$DIR" == "powermenus" ]]; then
@@ -20,32 +20,32 @@ else
 	if [[ "$layout" == "TRUE" ]]; then
   # Section 1
 
-		shutdown=""
-		reboot=""
-		lock=""
-		suspend=""
-		logout=""
+		shutdown=""
+		reboot=""
+		lock=""
+		suspend=""
+		logout=""
   # Section 2
-#		shutdown="󰐥"
-#		reboot="󰜉"
-#		lock="󰍁"
-#		suspend="󰒲"
-#		logout="󰍃 "
+		# shutdown="󰐥"
+		# reboot="󰜉"
+		# lock="󰍁"
+		# suspend="󰒲"
+		# logout="󰍃 "
 
 
 	else
   # Section 1
-		shutdown=" Shutdown"
-		reboot=" Restart"
-		lock=" Lock"
-		suspend=" Sleep"
-		logout=" Logout"
+		# shutdown=" Shutdown"
+		# reboot=" Restart"
+		# lock=" Lock"
+		# suspend=" Sleep"
+		# logout=" Logout"
   # Section 2
-#		shutdown="󰐥Shutdown"
-#		reboot="󰜉 Restart"
-#		lock="󰍁 Lock"
-#		suspend="󰒲Sleep"
-#		logout="󰍃 Logout"
+		shutdown="󰐥Shutdown"
+		reboot="󰜉 Restart"
+		lock="󰍁 Lock"
+		suspend="󰒲Sleep"
+		logout="󰍃 Logout"
 	fi
 	ddir="$HOME/.config/rofi/config"
 fi
@@ -90,25 +90,16 @@ case $chosen in
         fi
         ;;
     $lock)
-        sh $HOME/.local/bin/lock
+        i3lock
         ;;
     $suspend)
-		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			mpc -q pause
-			amixer set Master mute
-			sh $HOME/.local/bin/lock
+			i3lock
 			systemctl suspend
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-			exit
-        else
-			show_msg
-        fi
         ;;
     $logout)
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			bspc quit
+			i3-msg exit
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
         else
